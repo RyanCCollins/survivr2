@@ -1,23 +1,24 @@
-class Tribe
-  attr_reader :name, :members, :color
+require 'colorizr'
 
-  def initialize opts={}
-  	@name = opts[:name]
-  	@members = opts[:members]
-  	@color = opts[:color]
-    puts "#{@name} created."
+class Tribe
+  attr_reader :name, :members
+
+  def initialize setup_hash = {}
+    @members = setup_hash[:members]
+    @name = setup_hash[:name]
+    puts "#{@name} created"
   end
 
   def to_s
-    @name.send @color.to_sym
+    @name.to_s
   end
 
-  def tribal_council immune=nil
-  	@members.reject { |member| member == immune }.sample
+  def tribal_council immune
+    @members.delete_if { |member| member == immune }.sample
   end
 
   def eliminate_player player
-    @members -= [player]
+    @members.delete player
   end
 
 end
