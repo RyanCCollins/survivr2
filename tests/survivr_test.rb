@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require_relative "../lib/survivr"
 require_relative "../lib/game"
 require_relative "../lib/tribe"

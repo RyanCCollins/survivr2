@@ -1,0 +1,3 @@
+class Tribe
+  #code
+end
