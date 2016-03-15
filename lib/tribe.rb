@@ -10,11 +10,11 @@ class Tribe
   end
 
   def to_s
-    @name.to_s
+    @name
   end
 
   def tribal_council immune
-    @members.delete_if { |member| member == immune }.sample
+    @members.reject { |member| member == immune }.sample
   end
 
   def eliminate_player player
