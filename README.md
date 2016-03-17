@@ -1,29 +1,27 @@
-# Survivr2
+Survive 2
 
-## Project Overview
-The Survivr2 project will combine your knowledge of Ruby's object orientation and automated testing principles in a challenging and rewarding task. You will be creating a simulation of the game Survivor, where contestants participate in challenges to be saved from elimination. You will be presented with a series of files that contain tests and some empty files where your code will go. Your challenge is to ensure all of the tests pass, and that your simulation runs smoothly and matches the game mechanics described in the prep lesson
+## Getting Started
+Follow the install instructions below.  When ready, run
+```
+ruby lib/survivr.rb
+```
+To see your game!
 
+### Installing
+To get started, run `bundle install` from the root directory.  This will install any needed gems, including the colorizr gem.  If you have any difficulty, try running
+```
+gem install colorizr-0.0.2
+```
 
-## Why does this matter?
-Learning how to work in a TDD workflow is a very useful skill as a developer. Many of the world's best developers work with TDD and are comfortable using tests to ensure their code works. Automated testing can save you massive headaches in the future and will help you find your bugs much faster. This project will also solidify your knowledge of object orientation and Ruby mechanics in general, since some of the tests are tricky and require knowledge of return values, standard output and object inspection.
+## Built With
+Ruby
 
-## Getting started
-Go to the 'tests.rb' file FIRST. This will contain the information required to start running your tests. You will survive!
+## Authors
 
-## Completing this Project
-Complete all of the following requirements to finish Survivr2:
-* **Tests**: Make all of the tests pass.
-* **Simulation**: Ensure the simulation is in line with the game mechanics described in the prep lesson.
-* **Colorizr**: Once the tests pass and the simulation is accurate then use your Colorizr gem to add color to the text output to the terminal. You will have to colorize at least the tribe names. You may want to color the tribe names, the contestant names, the winners, or anything else. Get creative with your colorizing. It will surely help visibility.
-* **Tips**:
-  * Make sure that you are writing just enough code to make the tests pass. Refactor your code once you are happy with the passing test.
+* **Ryan Collins**
 
-## Submitting your project
-Before submitting your project for evaluation, we recommend that you check that each of the following is true:
+## License
 
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-* Your program runs without any errors
-* You are proud of your project and its output
-* You completed your project according to the instructions
-* You checked your project against the [rubric](https://docs.google.com/document/d/15alwRyxfVK8xhbDptn1D1276XSXm1tXpxXmQDBKHKRU/pub)
-* When you feel ready to submit, use the blue 'Submit Project' button below!
+## Acknowledgments
