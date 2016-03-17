@@ -21,7 +21,8 @@ puts "Welcome to Survivr".to_header.background_green
 @borneo = Game.new(@coyopa, @hunapu)
 
 
-#This is where you will write your code for the three phases
+#Phase one goes through 8 rounds
+  # One contestant is loses the immunity challenge and votes off a member
 def phase_one
   eliminated_contestants = []
   puts "Phase One: Pre-merge Begins".to_header.background_green
@@ -30,15 +31,18 @@ def phase_one
     eliminated_contestant = losing_tribe.tribal_council
     losing_tribe.eliminate eliminated_contestant
     eliminated_contestants << eliminated_contestant
-    puts "#{losing_tribe.colorized} lost in the immunity challenge".red
+    puts "#{eliminated_contestant.to_s.capitalize} lost in the immunity challenge"
     sleep(1)
-    puts "#{losing_tribe.colorized} has voted and #{eliminated_contestant.to_s.capitalize} has been eliminated".red
+    puts "#{losing_tribe.colorized} has voted and #{eliminated_contestant.to_s.capitalize} has been eliminated"
     puts
     sleep(1)
   end
   eliminated_contestants.length
 end
 
+# In phase two, there are three rounds.  The tribes merge to form one
+  # big tribe. The immunity challenge picks one member who is immune from eliminations
+  # The tribe then votes off one person.
 def phase_two
   puts "Phase Two: Merge Begins".to_header.background_green
   eliminated_contestants = []
@@ -57,7 +61,7 @@ def phase_two
   eliminated_contestants.length
 end
 
-
+# In phase three, there are 7 rounds.  When a member is voted off, they are added to the jury.
 def phase_three
   puts "Phase Three: Jury Selection Begins".to_header.background_green
   7.times do

@@ -13,7 +13,7 @@ class Jury
     @members
   end
 
-  # Cast votes for finalists.
+  # The jury Casts votes for finalists.
   def cast_votes finalists
     votes = Hash.new
     finalists.each do |finalist|
@@ -30,7 +30,7 @@ class Jury
 
   def report_votes votes
     votes.each do |finalist, vote|
-      puts "#{finalist.to_s.capitalize} has #{vote.to_s.capitalize} votes"
+      puts "#{finalist.to_s.capitalize} has #{vote} votes"
     end
   end
 
