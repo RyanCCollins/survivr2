@@ -5,8 +5,8 @@ class Contestant
   def initialize(name)
     @name = name
   end
-  # To_s returns the name to string.
+  # To_s returns the name.
   def to_s
-    @name.capitalize
+    @name
   end
 end

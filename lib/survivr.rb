@@ -30,9 +30,9 @@ def phase_one
     eliminated_contestant = losing_tribe.tribal_council
     losing_tribe.eliminate eliminated_contestant
     eliminated_contestants << eliminated_contestant
-    puts "#{losing_tribe.to_s} lost in the immunity challenge".red
+    puts "#{losing_tribe.colorized} lost in the immunity challenge".red
     sleep(1)
-    puts "#{losing_tribe.to_s} has voted and #{eliminated_contestant.to_s} has been eliminated".red
+    puts "#{losing_tribe.colorized} has voted and #{eliminated_contestant.to_s.capitalize} has been eliminated".red
     puts
     sleep(1)
   end
@@ -44,12 +44,12 @@ def phase_two
   eliminated_contestants = []
   3.times do
     immune = @borneo.individual_immunity_challenge
-    puts "#{immune.to_s} has won the individual immunity challenge"
+    puts "#{immune.to_s.capitalize} has won the individual immunity challenge"
     sleep(1)
-    eliminated_contestant = @merge_tribe.tribal_council immune
+    eliminated_contestant = @merge_tribe.tribal_council immune: immune
     eliminated_contestants << eliminated_contestant
     @merge_tribe.eliminate eliminated_contestant
-    puts "#{@merge_tribe.to_s} has voted to elimate #{eliminated_contestant.to_s}"
+    puts "#{@merge_tribe.colorized} has voted to elimate #{eliminated_contestant.to_s.capitalize}"
     puts
     sleep(1)
   end
@@ -59,16 +59,16 @@ end
 
 
 def phase_three
-  puts "Phase Three: Jury Selection Begins".to_header
+  puts "Phase Three: Jury Selection Begins".to_header.background_green
   7.times do
     immune = @borneo.individual_immunity_challenge
-    puts "#{immune.to_s} has won the individual immunity challenge"
+    puts "#{immune.to_s.capitalize} has won the individual immunity challenge"
     sleep(1)
-    eliminated_contestant = @merge_tribe.tribal_council immune
+    eliminated_contestant = @merge_tribe.tribal_council immune: immune
     @merge_tribe.eliminate eliminated_contestant
     @jury.add_member eliminated_contestant
-    puts "#{@merge_tribe} has voted and #{eliminated_contestant.to_s} is out of the game."
-    puts "#{eliminated_contestant.to_s} has been added to the jury"
+    puts "#{@merge_tribe.colorized} has voted and #{eliminated_contestant.to_s.capitalize} is out of the game."
+    puts "#{eliminated_contestant.to_s.capitalize} has been added to the jury"
     puts
     sleep(1)
   end

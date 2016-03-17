@@ -40,7 +40,7 @@ class TestTribe < Minitest::Test
       9.times do
         result = @coyopa.tribal_council(immune: immune)
         p result
-        if  result.class == Contestant && result != immune
+        if result.class == Contestant && result != immune
           immune_array.pop
         end
       end
