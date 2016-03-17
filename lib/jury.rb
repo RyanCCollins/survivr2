@@ -5,8 +5,8 @@ class Jury
     @members = []
   end
 
-  def add_member name
-    @members << name
+  def add_member member
+    @members << member
   end
 
   def members

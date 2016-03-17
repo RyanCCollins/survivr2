@@ -19,10 +19,15 @@ class Game
 
   # Create a new tribe consisting of all members from all tribes
   def merge tribe_name
+    merged_tribe = Tribe.new({ name: tribe_name, members: merged_members })
+    merged_tribe
+  end
+
+  # Convenience method for creating combining the new members
+  def merged_members
     new_members = []
     @tribes.each { |tribe| new_members << tribe.members }
-    merged_tribe = Tribe.new({ name: tribe_name, members: new_members.flatten! })
-    merged_tribe
+    new_members.flatten!
   end
 
   # Clear the tribes array
@@ -32,12 +37,7 @@ class Game
 
   # Return the contestant who is immune
   def individual_immunity_challenge
-    # Create a new array, push tribe.members on and return
-      # One of the members by flattening to one dimension and
-      # sampling the all_members array
-    all_members = []
-    @tribes.each{ |tribe| all_members << tribe.members }
-    all_members.flatten.sample
+    merged_members.sample
   end
 
 end
