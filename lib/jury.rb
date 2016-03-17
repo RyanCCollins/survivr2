@@ -1,4 +1,5 @@
 require_relative "string_extension"
+require "colorizr"
 
 class Jury
   attr_accessor :members
@@ -40,7 +41,7 @@ class Jury
 
   def announce_winner votes
     winner = votes.max_by { |_, vote| vote }.first
-    puts "And the winner of Survivr is...".to_header
+    puts "And the winner of Survivr is...".to_header.background_green
     sleep(1)
     puts "Wait for it"
     sleep(2)
