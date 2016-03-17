@@ -1,3 +1,5 @@
+require_relative "string_extension"
+
 class Jury
   attr_accessor :members
 
@@ -38,9 +40,7 @@ class Jury
 
   def announce_winner votes
     winner = votes.max_by { |_, vote| vote }.first
-    puts "*" * 80
-    puts "And the winner of Survivr is...".center(80)
-    puts "*" * 80
+    puts "And the winner of Survivr is...".to_header
     sleep(1)
     puts "Wait for it"
     sleep(2)
