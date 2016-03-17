@@ -30,7 +30,7 @@ class Jury
 
   def report_votes votes
     votes.each do |finalist, vote|
-      output = "#{finalist.to_s.capitalize} has #{vote} votes"
+      output = "#{finalist.to_s.capitalize} has #{vote} vote"
       output += "s" if vote > 1
       puts output
     end
