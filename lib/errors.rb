@@ -1,0 +1,2 @@
+class NoMoreColorsError < StandardError
+end

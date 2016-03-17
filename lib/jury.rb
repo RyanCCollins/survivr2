@@ -4,12 +4,15 @@ class Jury
   def initialize
     @members = []
   end
+
   def add_member name
     @members << name
   end
+
   def members
     @members
   end
+
   def cast_votes finalists
     votes = Hash.new
     finalists.each do |finalist|
@@ -18,7 +21,7 @@ class Jury
 
     @members.each do |member|
       vote = finalists.sample
-      puts "#{member.to_s.capitalize} votes for #{vote.to_s.capitalize}"
+      puts "#{member.to_s} votes for #{vote.to_s}"
       votes[vote] += 1
     end
     votes

@@ -12,7 +12,7 @@ class Game
     @tribes << tribe
   end
 
-  # Get a random sample from the tribes
+  # Immunity challenge picks a random sample from @tribes.
   def immunity_challenge
     @tribes.sample
   end
@@ -32,6 +32,9 @@ class Game
 
   # Return the contestant who is immune
   def individual_immunity_challenge
+    # Create a new array, push tribe.members on and return
+      # One of the members by flattening to one dimension and
+      # sampling the all_members array
     all_members = []
     @tribes.each{ |tribe| all_members << tribe.members }
     all_members.flatten.sample

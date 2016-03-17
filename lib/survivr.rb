@@ -6,7 +6,7 @@ require_relative "jury"
 require_relative "string_extension"
 
 # Print a section header for the game
-puts "Welcome to Survivr".to_header
+puts "Welcome to Survivr".to_header.background_green
 #After your tests pass, uncomment this code below
 #=========================================================
 # Create an array of twenty hopefuls to compete on the island of Borneo
@@ -24,15 +24,15 @@ puts "Welcome to Survivr".to_header
 #This is where you will write your code for the three phases
 def phase_one
   eliminated_contestants = []
-  puts "Phase One: Pre-merge Begins".to_header
+  puts "Phase One: Pre-merge Begins".to_header.background_green
   8.times do |round|
     losing_tribe = @borneo.immunity_challenge
     eliminated_contestant = losing_tribe.tribal_council
     losing_tribe.eliminate eliminated_contestant
     eliminated_contestants << eliminated_contestant
-    puts "#{losing_tribe.to_s.capitalize} lost in the immunity challenge"
+    puts "#{losing_tribe.to_s} lost in the immunity challenge".red
     sleep(1)
-    puts "#{losing_tribe.to_s.capitalize} has voted and #{eliminated_contestant.to_s.capitalize} has been eliminated"
+    puts "#{losing_tribe.to_s} has voted and #{eliminated_contestant.to_s} has been eliminated".red
     puts
     sleep(1)
   end
@@ -40,16 +40,16 @@ def phase_one
 end
 
 def phase_two
-  puts "Phase Two: Merge Begins".to_header
+  puts "Phase Two: Merge Begins".to_header.background_green
   eliminated_contestants = []
   3.times do
     immune = @borneo.individual_immunity_challenge
-    puts "#{immune.to_s.capitalize} has won the individual immunity challenge"
+    puts "#{immune.to_s} has won the individual immunity challenge"
     sleep(1)
     eliminated_contestant = @merge_tribe.tribal_council immune
     eliminated_contestants << eliminated_contestant
     @merge_tribe.eliminate eliminated_contestant
-    puts "#{@merge_tribe.to_s.capitalize} has voted to elimate #{eliminated_contestant.to_s.capitalize}"
+    puts "#{@merge_tribe.to_s} has voted to elimate #{eliminated_contestant.to_s}"
     puts
     sleep(1)
   end
@@ -62,13 +62,13 @@ def phase_three
   puts "Phase Three: Jury Selection Begins".to_header
   7.times do
     immune = @borneo.individual_immunity_challenge
-    puts "#{immune.to_s.capitalize} has won the individual immunity challenge"
+    puts "#{immune.to_s} has won the individual immunity challenge"
     sleep(1)
     eliminated_contestant = @merge_tribe.tribal_council immune
     @merge_tribe.eliminate eliminated_contestant
     @jury.add_member eliminated_contestant
-    puts "#{@merge_tribe} has voted and #{eliminated_contestant.to_s.capitalize} is out of the game."
-    puts "#{eliminated_contestant.to_s.capitalize} has been added to the jury"
+    puts "#{@merge_tribe} has voted and #{eliminated_contestant.to_s} is out of the game."
+    puts "#{eliminated_contestant.to_s} has been added to the jury"
     puts
     sleep(1)
   end
