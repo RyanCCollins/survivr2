@@ -31,7 +31,7 @@ def phase_one
     eliminated_contestant = losing_tribe.tribal_council
     losing_tribe.eliminate eliminated_contestant
     eliminated_contestants << eliminated_contestant
-    puts "#{eliminated_contestant.to_s.capitalize} lost in the immunity challenge"
+    puts "#{losing_tribe.colorized} lost in the immunity challenge and must vote off a member"
     sleep(1)
     puts "#{losing_tribe.colorized} has voted and #{eliminated_contestant.to_s.capitalize} has been eliminated"
     puts
