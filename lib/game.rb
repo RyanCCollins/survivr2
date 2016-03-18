@@ -1,10 +1,9 @@
 class Game
   attr_reader :tribes
 
-  def initialize tribe_one, tribe_two
+  def initialize *tribes
     @tribes = Array.new
-    @tribes << tribe_one
-    @tribes << tribe_two
+    @tribes = tribes
   end
 
   # Push a new tribe onto the @trives array
@@ -19,8 +18,9 @@ class Game
 
   # Create a new tribe consisting of all members from all tribes
   def merge tribe_name
+    clear_tribes
     merged_tribe = Tribe.new({ name: tribe_name, members: merged_members })
-    merged_tribe
+    @tribes = merged_tribe
   end
 
   # Convenience method for creating combining the new members
@@ -37,7 +37,7 @@ class Game
 
   # Return the contestant who is immune
   def individual_immunity_challenge
-    merged_members.sample
+    @tribes.sample
   end
 
 end

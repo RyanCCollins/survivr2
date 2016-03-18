@@ -11,8 +11,8 @@ class Tribe
     # Set a color by picking the team's jersey.  Will throw if no colors left.
     @color = pick_team_jersey
     puts "The " +"#{colorized}" + " tribe has been created with the following members"
-    output = ""
-    @members.each{ |member| output += "#{member.to_s.capitalize}, "}
+    # Good suggestion.  I like using .map :)
+    output = @members.map{ |member| "#{member.to_s.capitalize}"}.join(", ")
     puts output
     puts
   end
