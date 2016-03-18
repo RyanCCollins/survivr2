@@ -1,13 +1,18 @@
+GIT
+  remote: git://github.com/ryanccollins/colorizr.git
+  revision: 332b2701ea018fa263cf9dc4e2d77b8842e6d3ca
+  specs:
+    colorizr (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    colorizr (0.0.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  colorizr
+  colorizr!
 
 BUNDLED WITH
    1.11.2

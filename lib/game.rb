@@ -18,9 +18,9 @@ class Game
 
   # Create a new tribe consisting of all members from all tribes
   def merge tribe_name
-    clear_tribes
     merged_tribe = Tribe.new({ name: tribe_name, members: merged_members })
-    @tribes = merged_tribe
+    clear_tribes
+    @tribes << merged_tribe
   end
 
   # Convenience method for creating combining the new members
@@ -37,7 +37,7 @@ class Game
 
   # Return the contestant who is immune
   def individual_immunity_challenge
-    @tribes.sample
+    @tribes.members.sample
   end
 
 end
