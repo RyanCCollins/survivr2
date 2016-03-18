@@ -12,10 +12,6 @@ class Jury
     @members << member
   end
 
-  def members
-    @members
-  end
-
   # The jury Casts votes for finalists.
   def cast_votes finalists
     votes = Hash.new
