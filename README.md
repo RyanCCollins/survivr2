@@ -8,10 +8,7 @@ ruby lib/survivr.rb
 To see your game!
 
 ### Installing
-To get started, run `bundle install` from the root directory.  This will install any needed gems, including the colorizr gem.  If you have any difficulty, try running
-```
-gem install colorizr-0.0.2
-```
+To get started, run `bundle install` from the root directory.  This will install any needed gems, including the colorizr gem.  The gem is linked to the github repo, so no need to include it in this file.
 
 ## Built With
 Ruby
