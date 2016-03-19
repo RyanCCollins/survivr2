@@ -1,4 +1,4 @@
-Survive 2
+Survivr 2
 
 ## Getting Started
 Follow the install instructions below.  When ready, run
