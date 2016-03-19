@@ -25,7 +25,7 @@ puts "Welcome to Survivr".to_header.background_green
   # One contestant is loses the immunity challenge and votes off a member
   # Default options set suspense time as 1 so the tests don't fail.
   # This can be adjusted below.
-def phase_one options = { suspense_time: 1 }
+def phase_one options = { suspense_time: 0.5 }
   puts "Phase One: Pre-merge Begins".to_header.background_green
   8.times do |round|
     losing_tribe = @borneo.immunity_challenge
@@ -42,7 +42,7 @@ end
 # In phase two, there are three rounds.  The tribes merge to form one
   # big tribe. The immunity challenge picks one member who is immune from eliminations
   # The tribe then votes off one person.
-def phase_two options = { suspense_time: 1 }
+def phase_two options = { suspense_time: 0.5 }
   puts "Phase Two: Merge Begins".to_header.background_green
   3.times do
     immune = @borneo.individual_immunity_challenge
@@ -57,7 +57,7 @@ def phase_two options = { suspense_time: 1 }
 end
 
 # In phase three, there are 7 rounds.  When a member is voted off, they are added to the jury.
-def phase_three options = { suspense_time: 1 }
+def phase_three options = { suspense_time: 0.5 }
   puts "Phase Three: Jury Selection Begins".to_header.background_green
   7.times do
     immune = @borneo.individual_immunity_challenge
@@ -74,9 +74,9 @@ def phase_three options = { suspense_time: 1 }
 end
 
 # Set this in order to adjust the amount of delay between output.
-  # The default is 1, 0 will sleep for 0 and any other positive number
+  # The default is 0.5 (1/2 second), 0 will sleep for 0 and any other positive number
   # will work great (including floats)!
-default_options = { suspense_time: 1 } #💤💤💤💤
+default_options = { suspense_time: 0.5 } #💤💤💤💤
 
 # If all the tests pass, the code below should run the entire simulation!!
 #=========================================================

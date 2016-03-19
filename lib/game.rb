@@ -24,7 +24,7 @@ class Game
     @tribes[0] # has to return a tribe, not array, so select index 0
   end
 
-  # Convenience method for creating combining the new members
+  # Convenience method for creating / combining the new members
   def merged_members
     new_members = []
     @tribes.each { |tribe| new_members << tribe.members }
